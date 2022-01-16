@@ -20,25 +20,38 @@ List <Map< String, dynamic>> startitle = [
     'ename': 'নির্বাচন'
   }
 ];
-List <Map< String, dynamic>> midtitle = [
+List <Map< String, dynamic>> thirdtitle = [
   {
-    'year': '1944',
-    'ename': 'দেশভাগ'
+    'year': '১৯৭৫',
+    'ename': 'বঙ্গবন্ধু হত্যা'
   },
   {
-    'year': '1555',
-    'ename': 'ভাষা আন্দোলন'
+    'year': "১৯৯০",
+    'ename': 'স্বৈরাচার বিরোধী আন্দোলন'
   },
   {
-    'year': '1555',
-    'ename': 'ছয় দফা'
+    'year': '২০০৪',
+    'ename': 'গ্রেনেড হামলা'
   },
   {
-    'year': '1855',
-    'ename': 'গণঅভ্যুত্থান'
+    'year': '২০০৮',
+    'ename': 'মহাজোট'
+  },
+
+];
+List <Map< String, dynamic>> shasina = [
+  {
+    'year': '২০০৮',
+    'ename': 'ক্ষমতা গ্রহন'
+  },
+
+  {
+    'year': '২০১৭',
+    'ename': 'রোহিঙ্গা সংকট'
   },
   {
-    'year': '2005',
-    'ename': 'নির্বাচন'
-  }
+    'year': '২০২০',
+    'ename': 'পদ্মা সেতু'
+  },
+
 ];

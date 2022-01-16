@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 class detailspage extends StatefulWidget {
-  const detailspage(Map<String, dynamic> startitle, {Key? key}) : super(key: key);
+  detailspage(Map<String, dynamic> startitle
+      );
+
 
   @override
   _detailspageState createState() => _detailspageState();

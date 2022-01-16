@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "695877380948",
+    "project_id": "history-of-bangladesh-d2c0c",
+    "storage_bucket": "history-of-bangladesh-d2c0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695877380948:android:e562a1e8ae2f3535bdb6c1",
+        "android_client_info": {
+          "package_name": "com.example.timeline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695877380948-g22ee5a6a0cp0mn8e60h0ddbr78a6ail.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3Vv-2GhxnZRdifgiGNWmnmdCq7JJyZxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695877380948-g22ee5a6a0cp0mn8e60h0ddbr78a6ail.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
