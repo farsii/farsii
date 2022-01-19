@@ -24,7 +24,7 @@ class _postdataState extends State<postdata> {
         children: snapshot.data!.docs.map((mydata){
           return Center(
             child: ListTile(
-              title: Text(mydata['tittle']),
+              title: Text(mydata['title']),
             ),
           );
 

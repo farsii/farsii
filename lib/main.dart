@@ -10,22 +10,27 @@ import 'package:firebase_core/firebase_core.dart';
 
 
 void main() async{
+
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp(
+
     options: FirebaseOptions(
       apiKey: "AIzaSyCKbBBrsC9zjp7aUusDu-Of-t9k4VJXr_M",
       appId: "1:695877380948:web:6c44d3f6d599d6f4bdb6c1",
       messagingSenderId: "695877380948",
       projectId: "history-of-bangladesh-d2c0c",
     ),
+
   );
+
 
   runApp(MaterialApp(
     home: timeline(),
   ));
 }
 class timeline extends StatefulWidget {
-  const timeline({Key? key}) : super(key: key);
+
 
   @override
   _timelineState createState() => _timelineState();
@@ -38,34 +43,165 @@ class _timelineState extends State<timeline> {
       body: Container(
         decoration: BoxDecoration(
           gradient: RadialGradient(
-            colors: [Colors.yellow, Colors.orangeAccent],
+            colors: [Colors.blueGrey, Colors.teal],
             center: Alignment(1.1, -0.5),
             focal: Alignment(0.5, -0.5),
             focalRadius: 1.0,
           ),
         ),
-        child: ListView.builder(
-            itemCount:startitle.length ,
-            itemBuilder:(context, index){
-              return TimelineTile(
+        child: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 130,
+              child: TimelineTile(
                 alignment: TimelineAlign.manual,
                 lineXY: 0.2,
                 beforeLineStyle: LineStyle(color: Colors.white),
-                  afterLineStyle: LineStyle(color: Colors.white),
+                afterLineStyle: LineStyle(color: Colors.white),
+                indicatorStyle: IndicatorStyle(color: Colors.black),
+                startChild: Container(
+                  width: 50,
+                  height: 50,
+                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.all(10),
+                  child: Container(
+                    color: Colors.white,
+                    child: Center(
+                      child: Text(('১৯৪৭'),
+                        style:GoogleFonts.notoSansBengali(),
+                        ),
+                    ),
+                  ),
+
+
+                ),
+
+                endChild: Card(
+                  elevation: 10,
+                  shadowColor:Colors.grey,
+
+                  color: Colors.white70,
+                  margin: EdgeInsets.fromLTRB(10, 10, 50, 10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+
+                  child: GestureDetector(
+
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=> postdata(),
+                      ));
+                    },
+                    child:
+                    Container(
+
+
+
+                      margin: EdgeInsets.all(15),
+
+                      height: 40,
+
+
+                      child: Center(
+                        child: Text(
+                          ('দেশ ভাগ'),
+                          style: GoogleFonts.hindSiliguri(fontSize: 26,color: Colors.black,fontWeight: FontWeight.bold
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            SizedBox(
+              height: 150,
+              child: TimelineTile(
+                alignment: TimelineAlign.manual,
+                lineXY: 0.2,
+                beforeLineStyle: LineStyle(color: Colors.white),
+                afterLineStyle: LineStyle(color: Colors.white),
+                indicatorStyle: IndicatorStyle(color: Colors.red),
+                startChild: Container(
+                  width: 50,
+                  height: 50,
+                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.all(10),
+                  child: Container(
+                    color: Colors.white,
+                    child: Center(
+                      child: Text(('১৯৫২'),
+                        style:GoogleFonts.notoSansBengali(),
+                      ),
+                    ),
+                  ),
+
+
+                ),
+
+                endChild: Card(
+                  elevation: 10,
+                  shadowColor:Colors.black,
+
+                  color: Colors.blueGrey,
+                  margin: EdgeInsets.fromLTRB(10, 10, 50, 10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+
+                  child: GestureDetector(
+
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=> postdata(),
+                      ));
+                    },
+                    child:
+                    Container(
+
+
+
+                      margin: EdgeInsets.all(15),
+
+                      height: 40,
+
+
+                      child: Center(
+                        child: Text(
+                          ('ভাষা আন্দোলন'),
+                          style: GoogleFonts.hindSiliguri(fontSize: 26,fontWeight: FontWeight.bold,color: Colors.white
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            SizedBox(
+              height: 140,
+              child: TimelineTile(
+                alignment: TimelineAlign.manual,
+                lineXY: 0.2,
+                beforeLineStyle: LineStyle(color: Colors.white),
+                afterLineStyle: LineStyle(color: Colors.white),
                 indicatorStyle: IndicatorStyle(color: Colors.teal),
                 startChild: Container(
                   width: 50,
                   height: 50,
                   padding: EdgeInsets.all(10),
                   margin: EdgeInsets.all(10),
-                  child: Text(startitle[index]['year'], style:GoogleFonts.notoSansBengali(),),
+                  child: Text(('১৯৯৫'), style:GoogleFonts.notoSansBengali(),),
 
                 ),
                 endChild: Card(
                   child: GestureDetector(
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(
-                        builder: (context)=> afterwar(thirdtitle[index])
+                        builder: (context)=> postdata(),
                       ));
                     },
                     child:
@@ -80,18 +216,29 @@ class _timelineState extends State<timeline> {
                       ),
                       child: Center(
                         child: Text(
-                          startitle[index]['ename'],
+                          ('দেশশশ'),
                           style: GoogleFonts.hindSiliguri(fontSize: 26
-                        ),),
+                          ),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              );
-            }
+              ),
             ),
+
+
+
+
+
+          ],
+
+        )
+
+
       ),
     );
   }
 }
+
 
