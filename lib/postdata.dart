@@ -25,6 +25,7 @@ class _postdataState extends State<postdata> {
           return Center(
             child: ListTile(
               title: Text(mydata['title']),
+              leading: Image.network(mydata['image']),
             ),
           );
 
