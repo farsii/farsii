@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:timeline/about.dart';
-
 import 'package:timeline/postdata.dart';
-import 'package:timeline/war.dart';
 import 'package:timeline_tile/timeline_tile.dart';
+import 'firstpage.dart';
 
-class afterwar extends StatefulWidget {
+class beforewar extends StatefulWidget {
+  const beforewar({Key? key}) : super(key: key);
+
   @override
-  _afterwarState createState() => _afterwarState();
+  _beforewarState createState() => _beforewarState();
 }
 
-class _afterwarState extends State<afterwar> {
+class _beforewarState extends State<beforewar> {
+  String deshvag = 'wZneYEaIQpBiFbssXVOh';
+  String vasha = 'oxdCwwSzpv5SBrB8d0Q0';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,19 +29,77 @@ class _afterwarState extends State<afterwar> {
             ),
             child: Column(
               children: <Widget>[
-                //mujib hotta
+
+                //deshvag
                 SizedBox(
                   height: 120,
                   child: TimelineTile(
                     alignment: TimelineAlign.manual,
                     lineXY: 0.3,
                     beforeLineStyle: LineStyle(color: Colors.white),
-                    afterLineStyle: LineStyle(
-                      color: Colors.white,
+                    afterLineStyle: LineStyle(color: Colors.white),
+                    indicatorStyle: IndicatorStyle(color: Colors.black),
+                    startChild: Container(
+                      width: 80,
+                      height: 50,
+                      padding: EdgeInsets.all(10),
+                      margin: EdgeInsets.all(10),
+                      child: Container(
+                        color: Colors.white,
+                        child: Center(
+                          child: Text(('১৯৪৭'),
+                            style:TextStyle(fontWeight: FontWeight.bold,fontSize: 19),
+                          ),
+                        ),
+                      ),
+
+
                     ),
-                    indicatorStyle: IndicatorStyle(
-                      color: Colors.yellow,
+
+                    endChild: Card(
+                    elevation: 15,
+                    shadowColor:Colors.grey,
+                    margin: EdgeInsets.fromLTRB(10, 10, 50, 10),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
                     ),
+                    child: ElevatedButton(
+
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context)=> postdata(this.deshvag),
+                        ));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18)
+                          ),
+                          elevation: 10,
+                          minimumSize: Size (90, 90),
+                          onPrimary: Colors.black,
+                          primary: Colors.teal[100]),
+
+                      child: Text(
+                        ('দেশ ভাগ'),
+                        style: TextStyle
+                          (fontSize: 26,fontWeight:
+                        FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ),
+                  ),
+                ),
+
+                //vasha andolon
+                SizedBox(
+                  height: 100,
+                  child: TimelineTile(
+                    alignment: TimelineAlign.manual,
+                    lineXY: 0.3,
+                    beforeLineStyle: LineStyle(color: Colors.white),
+                    afterLineStyle: LineStyle(color: Colors.white),
+                    indicatorStyle: IndicatorStyle(color: Colors.red),
                     startChild: Container(
                       width: 50,
                       height: 50,
@@ -48,14 +108,77 @@ class _afterwarState extends State<afterwar> {
                       child: Container(
                         color: Colors.white,
                         child: Center(
-                          child: Text(
-                            ('১৯৭৫'),
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 19),
+                          child: Text(('১৯৫২'),
+                            style:GoogleFonts.notoSansBengali(fontWeight: FontWeight.bold,fontSize: 19),
+                          ),
+                        ),
+                      ),
+
+
+                    ),
+
+                    endChild: Card(
+                      elevation: 15,
+                      shadowColor:Colors.grey,
+                      margin: EdgeInsets.fromLTRB(10, 10, 50, 10),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: ElevatedButton(
+
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context)=> postdata(this.deshvag),
+                          ));
+                        },
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(18)
+                            ),
+                            elevation: 10,
+                            minimumSize: Size (90, 90),
+                            onPrimary: Colors.white,
+                            primary: Colors.lightBlueAccent[600]),
+
+                        child: Text(
+                          ('ভাষা আন্দোলন'),
+                          style: TextStyle
+                            (fontSize: 24,fontWeight:
+                          FontWeight.bold,
                           ),
                         ),
                       ),
                     ),
+                  ),
+                ),
+
+                //choydofa
+                SizedBox(
+                  height: 120,
+                  child: TimelineTile(
+                    alignment: TimelineAlign.manual,
+                    lineXY: 0.3,
+                    beforeLineStyle: LineStyle(color: Colors.white),
+
+                    afterLineStyle: LineStyle(color: Colors.white,),
+                    indicatorStyle: IndicatorStyle(color: Colors.yellow,),
+                    startChild: Container(
+                      width: 50,
+                      height: 50,
+                      padding: EdgeInsets.all(10),
+                      margin: EdgeInsets.all(10),
+                      child: Container(
+                        color: Colors.white,
+                        child: Center(
+                          child: Text(('১৯৬৬'),
+                            style:TextStyle(fontWeight: FontWeight.bold,fontSize: 19),
+                          ),
+                        ),
+                      ),
+
+
+                    ),
+
                     endChild:Card(
                       elevation: 15,
                       shadowColor:Colors.grey,
@@ -67,7 +190,7 @@ class _afterwarState extends State<afterwar> {
 
                         onPressed: (){
                           Navigator.push(context, MaterialPageRoute(
-                            builder: (context)=> war(),
+                            builder: (context)=> postdata(this.deshvag),
                           ));
                         },
                         style: ElevatedButton.styleFrom(
@@ -80,71 +203,7 @@ class _afterwarState extends State<afterwar> {
                             primary: Colors.blueGrey),
 
                         child: Text(
-                          ('বঙ্গবন্ধু হত্যা'),
-                          style: TextStyle
-                            (fontSize: 26,fontWeight:
-                          FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                //shoyrochar
-                SizedBox(
-                  height: 120,
-                  child: TimelineTile(
-                    alignment: TimelineAlign.manual,
-                    lineXY: 0.3,
-                    beforeLineStyle: LineStyle(color: Colors.white),
-                    afterLineStyle: LineStyle(
-                      color: Colors.white,
-                    ),
-                    indicatorStyle: IndicatorStyle(
-                      color: Colors.yellow,
-                    ),
-                    startChild: Container(
-                      width: 50,
-                      height: 50,
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.all(10),
-                      child: Container(
-                        color: Colors.white,
-                        child: Center(
-                          child: Text(
-                            ('১৯৯০'),
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 19),
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    endChild:Card(
-                      elevation: 15,
-                      shadowColor:Colors.grey,
-                      margin: EdgeInsets.fromLTRB(10, 10, 15, 10),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: ElevatedButton(
-
-                        onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(
-                            builder: (context)=> war(),
-                          ));
-                        },
-                        style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18)
-                            ),
-                            elevation: 10,
-                            minimumSize: Size (90, 130),
-                            onPrimary: Colors.white,
-                            primary: Colors.red[900]),
-
-                        child: Text(
-                          ('স্বৈরাচার বিরোধী আন্দোলন'),
+                          ('ছয় দফা'),
                           style: TextStyle
                             (fontSize: 26,fontWeight:
                           FontWeight.bold,
@@ -155,19 +214,17 @@ class _afterwarState extends State<afterwar> {
                   ),
                 ),
 
-                //arrest
+
+                // gono ovvuthan
                 SizedBox(
                   height: 120,
                   child: TimelineTile(
                     alignment: TimelineAlign.manual,
                     lineXY: 0.3,
                     beforeLineStyle: LineStyle(color: Colors.white),
-                    afterLineStyle: LineStyle(
-                      color: Colors.white,
-                    ),
-                    indicatorStyle: IndicatorStyle(
-                      color: Colors.yellow,
-                    ),
+
+                    afterLineStyle: LineStyle(color: Colors.white,),
+                    indicatorStyle: IndicatorStyle(color: Colors.yellow,),
                     startChild: Container(
                       width: 50,
                       height: 50,
@@ -176,80 +233,16 @@ class _afterwarState extends State<afterwar> {
                       child: Container(
                         color: Colors.white,
                         child: Center(
-                          child: Text(
-                            ('২০০৭'),
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 19),
+                          child: Text(('১৯৬৯'),
+                            style:GoogleFonts.notoSansBengali(fontWeight: FontWeight.bold,fontSize: 19),
                           ),
                         ),
                       ),
+
+
                     ),
 
-                    endChild:Card(
-                      elevation: 15,
-                      shadowColor:Colors.grey,
-                      margin: EdgeInsets.fromLTRB(10, 10, 15, 10),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: ElevatedButton(
-
-                        onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(
-                            builder: (context)=> war(),
-                          ));
-                        },
-                        style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18)
-                            ),
-                            elevation: 10,
-                            minimumSize: Size (90, 130),
-                            onPrimary: Colors.black,
-                            primary: Colors.lightBlueAccent),
-
-                        child: Text(
-                          ('নেত্রীদ্বয়ের গ্রেপ্তার'),
-                          style: TextStyle
-                            (fontSize: 26,fontWeight:
-                          FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-
-                //mohajot
-                SizedBox(
-                  height: 120,
-                  child: TimelineTile(
-                    alignment: TimelineAlign.manual,
-                    lineXY: 0.3,
-                    beforeLineStyle: LineStyle(color: Colors.white),
-                    afterLineStyle: LineStyle(
-                      color: Colors.white,
-                    ),
-                    indicatorStyle: IndicatorStyle(
-                      color: Colors.yellow,
-                    ),
-                    startChild: Container(
-                      width: 50,
-                      height: 50,
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.all(10),
-                      child: Container(
-                        color: Colors.white,
-                        child: Center(
-                          child: Text(
-                            ('২০০৮'),
-                            style: GoogleFonts.notoSansBengali(
-                                fontWeight: FontWeight.bold, fontSize: 19),
-                          ),
-                        ),
-                      ),
-                    ),
-                    endChild:Card(
+                    endChild: Card(
                       elevation: 15,
                       shadowColor:Colors.grey,
                       margin: EdgeInsets.fromLTRB(10, 10, 50, 10),
@@ -260,7 +253,7 @@ class _afterwarState extends State<afterwar> {
 
                         onPressed: (){
                           Navigator.push(context, MaterialPageRoute(
-                            builder: (context)=> war(),
+                            builder: (context)=> postdata(this.deshvag),
                           ));
                         },
                         style: ElevatedButton.styleFrom(
@@ -269,23 +262,90 @@ class _afterwarState extends State<afterwar> {
                             ),
                             elevation: 10,
                             minimumSize: Size (90, 90),
-                            onPrimary: Colors.white,
-                            primary: Colors.cyan),
+                            onPrimary: Colors.black,
+                            primary: Colors.yellow),
 
                         child: Text(
-                          ('মহাজোট'),
-                          style: TextStyle
-                            (fontSize: 28,fontWeight:
+                          ('গণঅভ্যুত্থান'),
+                          style: GoogleFonts.hindSiliguri
+                            (fontSize: 26,fontWeight:
                           FontWeight.bold,
                           ),
                         ),
                       ),
                     ),
+
                   ),
                 ),
 
+                //70 er nirbachon
+                SizedBox(
+                  height: 120,
+                  child: TimelineTile(
+                    alignment: TimelineAlign.manual,
+                    lineXY: 0.3,
+                    beforeLineStyle: LineStyle(color: Colors.white),
+
+                    afterLineStyle: LineStyle(color: Colors.white,),
+                    indicatorStyle: IndicatorStyle(color: Colors.yellow,),
+                    startChild: Container(
+                      width: 50,
+                      height: 50,
+                      padding: EdgeInsets.all(10),
+                      margin: EdgeInsets.all(10),
+                      child: Container(
+                        color: Colors.white,
+                        child: Center(
+                          child: Text(('১৯৭০'),
+                            style:TextStyle(fontWeight: FontWeight.bold,fontSize: 19),
+                          ),
+                        ),
+                      ),
+
+
+                    ),
+
+                    endChild: Card(
+                      elevation: 15,
+                      shadowColor:Colors.grey,
+                      margin: EdgeInsets.fromLTRB(10, 10, 50, 10),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: ElevatedButton(
+
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (context)=> postdata(this.deshvag),
+                          ));
+                        },
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(18)
+                            ),
+                            elevation: 10,
+                            minimumSize: Size (90, 90),
+                            onPrimary: Colors.black,
+                            primary: Colors.yellow),
+
+                        child: Text(
+                          ('নির্বাচন'),
+                          style: TextStyle
+                            (fontSize: 26,fontWeight:
+                          FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                  ),
+                ),
+
+
               ],
-            )),
+
+            )
+        ),
       ),
     );
   }
